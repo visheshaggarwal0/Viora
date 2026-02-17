@@ -3,11 +3,13 @@ import os
 from datetime import datetime
 
 class Organizer:
-    def __init__(self, storage_file: str = "organizer.json"):
+    def __init__(self, storage_file: str = "data/organizer.json"):
         self.storage_file = storage_file
         self.data = self._load_data()
 
     def _load_data(self):
+        # Ensure the directory exists
+        os.makedirs(os.path.dirname(self.storage_file), exist_ok=True)
         if os.path.exists(self.storage_file):
             with open(self.storage_file, 'r') as f:
                 return json.load(f)

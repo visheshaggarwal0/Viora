@@ -11,3 +11,15 @@ dotenv
 langchain-groq
 ddgs
 langchain_google_genai
+requests
+beautifulsoup4
+pycaw
+comtypes
+psutil
+pyperclip
+Pillow
+playwright
+playwright-stealth
+pywinauto
+pyautogui
+opencv-python

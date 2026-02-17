@@ -63,6 +63,9 @@ def chat():
             console.print(f"[bold blue]Viora:[/bold blue] {final_response}")
         except KeyboardInterrupt:
             break
+        except Exception as e:
+            console.print(f"[bold red]An error occurred:[/bold red] {str(e)}")
+            console.print("[italic]Viora recovered from the error and is ready for the next command.[/italic]")
 
 @app.command()
 def todo(task: str):
