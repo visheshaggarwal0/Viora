@@ -199,3 +199,185 @@ class BrowserTools:
             return "Browser closed successfully"
         except Exception as e:
             return f"Error closing browser: {str(e)}"
+    
+    # ===== Form Handling Enhancements =====
+    
+    def submit_form(self, selector: str):
+        """Submit a form by its selector."""
+        try:
+            self._ensure_browser()
+            self.page.evaluate(f"document.querySelector('{selector}').submit()")
+            return f"Form {selector} submitted successfully"
+        except Exception as e:
+            return f"Error submitting form {selector}: {str(e)}"
+    
+    def select_dropdown(self, selector: str, value: str):
+        """Select an option from a dropdown by value or text."""
+        try:
+            self._ensure_browser()
+            self.page.select_option(selector, value, timeout=10000)
+            return f"Selected '{value}' in dropdown {selector}"
+        except Exception as e:
+            return f"Error selecting dropdown option: {str(e)}"
+    
+    def check_checkbox(self, selector: str, checked: bool = True):
+        """Check or uncheck a checkbox."""
+        try:
+            self._ensure_browser()
+            if checked:
+                self.page.check(selector, timeout=10000)
+                return f"Checked checkbox {selector}"
+            else:
+                self.page.uncheck(selector, timeout=10000)
+                return f"Unchecked checkbox {selector}"
+        except Exception as e:
+            return f"Error toggling checkbox: {str(e)}"
+    
+    def upload_file(self, selector: str, filepath: str):
+        """Upload a file to a file input element."""
+        try:
+            self._ensure_browser()
+            self.page.set_input_files(selector, filepath, timeout=10000)
+            return f"Uploaded file {filepath} to {selector}"
+        except Exception as e:
+            return f"Error uploading file: {str(e)}"
+    
+    # ===== Page Interaction Enhancements =====
+    
+    def scroll_to(self, x: int, y: int):
+        """Scroll to specific coordinates on the page."""
+        try:
+            self._ensure_browser()
+            self.page.evaluate(f"window.scrollTo({x}, {y})")
+            return f"Scrolled to ({x}, {y})"
+        except Exception as e:
+            return f"Error scrolling: {str(e)}"
+    
+    def scroll_to_element(self, selector: str):
+        """Scroll an element into view."""
+        try:
+            self._ensure_browser()
+            self.page.locator(selector).scroll_into_view_if_needed(timeout=10000)
+            return f"Scrolled to element {selector}"
+        except Exception as e:
+            return f"Error scrolling to element: {str(e)}"
+    
+    def hover_element(self, selector: str):
+        """Hover over an element."""
+        try:
+            self._ensure_browser()
+            self.page.hover(selector, timeout=10000)
+            return f"Hovered over element {selector}"
+        except Exception as e:
+            return f"Error hovering: {str(e)}"
+    
+    def right_click(self, selector: str):
+        """Right-click on an element."""
+        try:
+            self._ensure_browser()
+            self.page.click(selector, button='right', timeout=10000)
+            return f"Right-clicked element {selector}"
+        except Exception as e:
+            return f"Error right-clicking: {str(e)}"
+    
+    # ===== Tab Management =====
+    
+    def new_tab(self, url: str = "about:blank"):
+        """Open a new tab and optionally navigate to a URL."""
+        try:
+            self._ensure_browser()
+            new_page = self.context.new_page()
+            if url != "about:blank":
+                new_page.goto(url, wait_until='domcontentloaded', timeout=30000)
+            self.page = new_page  # Switch to new tab
+            return f"Opened new tab{' and navigated to ' + url if url != 'about:blank' else ''}"
+        except Exception as e:
+            return f"Error opening new tab: {str(e)}"
+    
+    def switch_tab(self, index: int):
+        """Switch to a tab by index (0-based)."""
+        try:
+            self._ensure_browser()
+            pages = self.context.pages
+            if 0 <= index < len(pages):
+                self.page = pages[index]
+                return f"Switched to tab {index} (URL: {self.page.url})"
+            else:
+                return f"Invalid tab index {index}. Valid range: 0-{len(pages)-1}"
+        except Exception as e:
+            return f"Error switching tab: {str(e)}"
+    
+    def close_tab(self):
+        """Close the current tab."""
+        try:
+            self._ensure_browser()
+            pages = self.context.pages
+            if len(pages) > 1:
+                self.page.close()
+                self.page = pages[0]  # Switch to first tab
+                return "Closed current tab and switched to first tab"
+            else:
+                return "Cannot close the last tab. Use close_browser() instead."
+        except Exception as e:
+            return f"Error closing tab: {str(e)}"
+    
+    def list_tabs(self):
+        """List all open tabs with their URLs."""
+        try:
+            self._ensure_browser()
+            pages = self.context.pages
+            result = f"Open tabs ({len(pages)}):\n"
+            for i, page in enumerate(pages):
+                current = " (current)" if page == self.page else ""
+                result += f"{i}. {page.url}{current}\n"
+            return result
+        except Exception as e:
+            return f"Error listing tabs: {str(e)}"
+    
+    # ===== Data Extraction Enhancements =====
+    
+    def extract_table(self, selector: str):
+        """Extract table data as a structured format."""
+        try:
+            self._ensure_browser()
+            table_data = self.page.evaluate(f"""
+                () => {{
+                    const table = document.querySelector('{selector}');
+                    if (!table) return null;
+                    const rows = Array.from(table.querySelectorAll('tr'));
+                    return rows.map(row => {{
+                        const cells = Array.from(row.querySelectorAll('th, td'));
+                        return cells.map(cell => cell.textContent.trim());
+                    }});
+                }}
+            """)
+            if table_data:
+                result = "Table data:\n"
+                for row in table_data[:10]:  # Limit to 10 rows
+                    result += " | ".join(row) + "\n"
+                return result
+            else:
+                return f"No table found with selector {selector}"
+        except Exception as e:
+            return f"Error extracting table: {str(e)}"
+    
+    def get_all_text(self):
+        """Get all visible text from the page."""
+        try:
+            self._ensure_browser()
+            text = self.page.inner_text('body')
+            # Truncate if too long
+            if len(text) > 3000:
+                text = text[:3000] + "\n...[Text Truncated]..."
+            return f"Page text:\n{text}"
+        except Exception as e:
+            return f"Error getting page text: {str(e)}"
+    
+    def count_elements(self, selector: str):
+        """Count the number of elements matching a selector."""
+        try:
+            self._ensure_browser()
+            count = self.page.locator(selector).count()
+            return f"Found {count} element(s) matching {selector}"
+        except Exception as e:
+            return f"Error counting elements: {str(e)}"

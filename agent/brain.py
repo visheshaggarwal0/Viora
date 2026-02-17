@@ -27,7 +27,7 @@ class Brain:
                 model_name="llama-3.3-70b-versatile", # Defaulting to a strong model
                 groq_api_key=api_key
             ).bind_tools(self.tools)
-        elif self.provider == "gemini":
+        elif self.provider in ["gemini", "google"]:  # Accept both 'google' and 'gemini'
             api_key = os.getenv("GOOGLE_API_KEY")
             return ChatGoogleGenerativeAI(
                 model="gemini-1.5-flash",
@@ -35,7 +35,7 @@ class Brain:
                 temperature=0
             ).bind_tools(self.tools)
         else:
-            raise ValueError(f"Unsupported provider: {self.provider}")
+            raise ValueError(f"Unsupported provider: {self.provider}. Use 'groq' or 'google'/'gemini'.")
 
     def think(self, prompt: str) -> BaseMessage:
         """Processes a prompt and returns the AI message (potentially with tool calls)."""

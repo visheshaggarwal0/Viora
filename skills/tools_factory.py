@@ -256,6 +256,152 @@ def get_viora_tools():
             name="desktop_get_window_info",
             func=desktop.get_window_info,
             description="Get detailed information about a window (position, size, visibility)."
+        ),
+
+        # Browser Enhancements
+        StructuredTool.from_function(
+            name="browser_submit_form",
+            func=browser.submit_form,
+            description="Submit a form by its CSS selector."
+        ),
+
+        StructuredTool.from_function(
+            name="browser_select_dropdown",
+            func=browser.select_dropdown,
+            description="Select an option from a dropdown menu by value or text."
+        ),
+
+        StructuredTool.from_function(
+            name="browser_check_checkbox",
+            func=browser.check_checkbox,
+            description="Check or uncheck a checkbox. Pass checked=True to check, checked=False to uncheck."
+        ),
+
+        StructuredTool.from_function(
+            name="browser_upload_file",
+            func=browser.upload_file,
+            description="Upload a file to a file input element. Provide selector and absolute file path."
+        ),
+
+        StructuredTool.from_function(
+            name="browser_scroll_to",
+            func=browser.scroll_to,
+            description="Scroll to specific coordinates (x, y) on the page."
+        ),
+
+        StructuredTool.from_function(
+            name="browser_scroll_to_element",
+            func=browser.scroll_to_element,
+            description="Scroll an element into view using its CSS selector."
+        ),
+
+        StructuredTool.from_function(
+            name="browser_hover",
+            func=browser.hover_element,
+            description="Hover over an element using its CSS selector."
+        ),
+
+        StructuredTool.from_function(
+            name="browser_right_click",
+            func=browser.right_click,
+            description="Right-click on an element using its CSS selector."
+        ),
+
+        StructuredTool.from_function(
+            name="browser_new_tab",
+            func=browser.new_tab,
+            description="Open a new browser tab, optionally navigate to a URL."
+        ),
+
+        StructuredTool.from_function(
+            name="browser_switch_tab",
+            func=browser.switch_tab,
+            description="Switch to a tab by index (0-based)."
+        ),
+
+        StructuredTool.from_function(
+            name="browser_close_tab",
+            func=browser.close_tab,
+            description="Close the current tab and switch to the first tab."
+        ),
+
+        StructuredTool.from_function(
+            name="browser_list_tabs",
+            func=browser.list_tabs,
+            description="List all open tabs with their URLs."
+        ),
+
+        StructuredTool.from_function(
+            name="browser_extract_table",
+            func=browser.extract_table,
+            description="Extract table data from a table element using CSS selector."
+        ),
+
+        StructuredTool.from_function(
+            name="browser_get_all_text",
+            func=browser.get_all_text,
+            description="Get all visible text content from the current page."
+        ),
+
+        StructuredTool.from_function(
+            name="browser_count_elements",
+            func=browser.count_elements,
+            description="Count the number of elements matching a CSS selector."
+        ),
+
+        # Desktop Enhancements
+        StructuredTool.from_function(
+            name="desktop_drag_drop",
+            func=desktop.drag_and_drop,
+            description="Drag from coordinates (x1, y1) to (x2, y2)."
+        ),
+
+        StructuredTool.from_function(
+            name="desktop_scroll",
+            func=desktop.scroll_mouse,
+            description="Scroll with mouse wheel. Positive clicks = up, negative = down."
+        ),
+
+        StructuredTool.from_function(
+            name="desktop_right_click",
+            func=desktop.right_click_at,
+            description="Right-click at specific screen coordinates."
+        ),
+
+        StructuredTool.from_function(
+            name="desktop_close_window",
+            func=desktop.close_window,
+            description="Close a window by its title (partial match works)."
+        ),
+
+        StructuredTool.from_function(
+            name="desktop_resize_window",
+            func=desktop.resize_window,
+            description="Resize a window to specific width and height."
+        ),
+
+        StructuredTool.from_function(
+            name="desktop_move_window",
+            func=desktop.move_window_to,
+            description="Move a window to specific screen coordinates (x, y)."
+        ),
+
+        StructuredTool.from_function(
+            name="desktop_restore_window",
+            func=desktop.restore_window,
+            description="Restore a minimized window by its title."
+        ),
+
+        StructuredTool.from_function(
+            name="desktop_capture_region",
+            func=desktop.capture_region,
+            description="Capture a screenshot of a specific screen region (x, y, width, height)."
+        ),
+
+        StructuredTool.from_function(
+            name="desktop_get_pixel_color",
+            func=desktop.get_pixel_color,
+            description="Get the RGB color value of a pixel at specific coordinates."
         )
 
     ]

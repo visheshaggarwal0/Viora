@@ -247,3 +247,125 @@ class DesktopTools:
             return f"Window with title containing '{title}' not found."
         except Exception as e:
             return f"Error getting window info: {str(e)}"
+    
+    # ===== Advanced Mouse Enhancements =====
+    
+    def drag_and_drop(self, x1: int, y1: int, x2: int, y2: int, duration: float = 1.0):
+        """Drag from (x1, y1) to (x2, y2)."""
+        try:
+            pyautogui.moveTo(x1, y1, duration=duration/2)
+            pyautogui.dragTo(x2, y2, duration=duration/2, button='left')
+            return f"Dragged from ({x1}, {y1}) to ({x2}, {y2})"
+        except Exception as e:
+            return f"Error dragging: {str(e)}"
+    
+    def scroll_mouse(self, clicks: int):
+        """Scroll with mouse wheel. Positive = up, negative = down."""
+        try:
+            pyautogui.scroll(clicks)
+            direction = "up" if clicks > 0 else "down"
+            return f"Scrolled {abs(clicks)} clicks {direction}"
+        except Exception as e:
+            return f"Error scrolling: {str(e)}"
+    
+    def right_click_at(self, x: int, y: int):
+        """Right-click at specific coordinates."""
+        try:
+            pyautogui.rightClick(x, y)
+            return f"Right-clicked at ({x}, {y})"
+        except Exception as e:
+            return f"Error right-clicking: {str(e)}"
+    
+    # ===== Window Control Enhancements =====
+    
+    def close_window(self, title: str):
+        """Close a window by its title."""
+        try:
+            desktop = Desktop(backend="uia")
+            windows = desktop.windows()
+            for win in windows:
+                try:
+                    win_title = win.window_text()
+                    if title.lower() in win_title.lower():
+                        win.close()
+                        return f"Closed window: {win_title}"
+                except:
+                    continue
+            return f"Window with title containing '{title}' not found."
+        except Exception as e:
+            return f"Error closing window: {str(e)}"
+    
+    def resize_window(self, title: str, width: int, height: int):
+        """Resize a window to specific dimensions."""
+        try:
+            desktop = Desktop(backend="uia")
+            windows = desktop.windows()
+            for win in windows:
+                try:
+                    win_title = win.window_text()
+                    if title.lower() in win_title.lower():
+                        rect = win.rectangle()
+                        win.move_window(rect.left, rect.top, width, height)
+                        return f"Resized window '{win_title}' to {width}x{height}"
+                except:
+                    continue
+            return f"Window with title containing '{title}' not found."
+        except Exception as e:
+            return f"Error resizing window: {str(e)}"
+    
+    def move_window_to(self, title: str, x: int, y: int):
+        """Move a window to specific coordinates."""
+        try:
+            desktop = Desktop(backend="uia")
+            windows = desktop.windows()
+            for win in windows:
+                try:
+                    win_title = win.window_text()
+                    if title.lower() in win_title.lower():
+                        rect = win.rectangle()
+                        win.move_window(x, y, rect.width(), rect.height())
+                        return f"Moved window '{win_title}' to ({x}, {y})"
+                except:
+                    continue
+            return f"Window with title containing '{title}' not found."
+        except Exception as e:
+            return f"Error moving window: {str(e)}"
+    
+    def restore_window(self, title: str):
+        """Restore a minimized window."""
+        try:
+            desktop = Desktop(backend="uia")
+            windows = desktop.windows()
+            for win in windows:
+                try:
+                    win_title = win.window_text()
+                    if title.lower() in win_title.lower():
+                        win.restore()
+                        return f"Restored window: {win_title}"
+                except:
+                    continue
+            return f"Window with title containing '{title}' not found."
+        except Exception as e:
+            return f"Error restoring window: {str(e)}"
+    
+    # ===== Screen Capture Enhancements =====
+    
+    def capture_region(self, x: int, y: int, width: int, height: int, filename: str = "region.png"):
+        """Capture a specific region of the screen."""
+        try:
+            import os
+            os.makedirs("screenshots", exist_ok=True)
+            filepath = os.path.join("screenshots", filename)
+            screenshot = pyautogui.screenshot(region=(x, y, width, height))
+            screenshot.save(filepath)
+            return f"Region screenshot saved to {filepath}"
+        except Exception as e:
+            return f"Error capturing region: {str(e)}"
+    
+    def get_pixel_color(self, x: int, y: int):
+        """Get the RGB color of a pixel at specific coordinates."""
+        try:
+            pixel = pyautogui.pixel(x, y)
+            return f"Pixel color at ({x}, {y}): RGB{pixel}"
+        except Exception as e:
+            return f"Error getting pixel color: {str(e)}"
