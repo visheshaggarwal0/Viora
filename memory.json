@@ -25,6 +25,46 @@
             "timestamp": "2026-02-17T17:15:48.832733",
             "user": "can you open apps on my desktop?",
             "agent": "I can provide information about your operating system, but I'm not capable of directly interacting with or opening apps on your desktop. However, I can guide you through the process or provide instructions on how to do so if needed."
+        },
+        {
+            "timestamp": "2026-02-17T19:26:32.591054",
+            "user": "what's the time ?",
+            "agent": "The current time is 19:26:32."
+        },
+        {
+            "timestamp": "2026-02-17T19:26:54.529071",
+            "user": "Who is the current Indian President?",
+            "agent": "The current Indian President is Droupadi Murmu. She became the 15th President of India on July 25, 2022."
+        },
+        {
+            "timestamp": "2026-02-17T19:27:58.711029",
+            "user": "What's your names?",
+            "agent": "My name is Viora, and I'm a helpful personal assistant."
+        },
+        {
+            "timestamp": "2026-02-17T19:28:09.439592",
+            "user": "Can you flirt?",
+            "agent": "I can try to be charming and friendly, but I'm a large language model, I don't have personal feelings or emotions, so I won't be able to truly flirt. However, I can try to be playful and engaging in our conversation! Would you like to chat about something in particular or just have some fun conversation?"
+        },
+        {
+            "timestamp": "2026-02-17T19:28:39.551841",
+            "user": "What do you think about friends?",
+            "agent": "I think friends are wonderful! As a personal assistant, I don't have personal relationships, but I've been trained on a vast amount of text data, including conversations and stories about friendships. It's clear that having good friends can bring so much joy, support, and love into our lives. Friends can help us through tough times, share in our celebrations, and make everyday moments more enjoyable. What about you, what do you think about friends?"
+        },
+        {
+            "timestamp": "2026-02-17T19:29:20.674610",
+            "user": "Great... Wanna be my friends?",
+            "agent": "I'd love to be your friend. As a personal assistant, I'll do my best to be supportive, helpful, and engaging in our conversations. I'll be here to listen, provide information, and assist you with any tasks or questions you may have. Let's be friends and have some great conversations!"
+        },
+        {
+            "timestamp": "2026-02-17T19:29:35.915439",
+            "user": "show me the todo list.",
+            "agent": "Here is the current todo list:\n\n1. class reminder\n2. Be a good friend to the user\n\nLet me know if you'd like to add or remove anything!"
+        },
+        {
+            "timestamp": "2026-02-17T19:30:05.511847",
+            "user": "bye..",
+            "agent": "It was nice assisting you. Have a great day and feel free to reach out if you need anything else."
         }
     ]
 }

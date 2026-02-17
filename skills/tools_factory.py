@@ -38,6 +38,30 @@ def get_viora_tools():
             name="get_os_info",
             func=sys.get_os_info,
             description="Get operating system information."
+        ),
+
+        StructuredTool.from_function(
+            name="open_app",
+            func=sys.open_application,
+            description="Open an application on Windows (e.g., 'notepad', 'calc')."
+        ),
+
+        StructuredTool.from_function(
+            name="list_files",
+            func=sys.list_files,
+            description="List files and directories in a given path (default is current directory)."
+        ),
+
+        StructuredTool.from_function(
+            name="read_file",
+            func=sys.read_file,
+            description="Read the content of a text file."
+        ),
+
+        StructuredTool.from_function(
+            name="write_file",
+            func=sys.write_file,
+            description="Write content to a file. Defaults to overwrite ('w'), use mode='a' to append."
         )
 
     ]
