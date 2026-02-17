@@ -1,0 +1,13 @@
+rich
+langchain
+langchain-community
+langchain-core
+python-dotenv
+typer
+openai
+colorama
+duckduckgo-search
+dotenv
+langchain-groq
+ddgs
+langchain_google_genai
