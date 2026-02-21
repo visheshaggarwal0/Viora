@@ -140,6 +140,151 @@
             "timestamp": "2026-02-17T20:48:00.017549",
             "user": "exit..",
             "agent": "Goodbye! It was nice assisting you. Have a great day!"
+        },
+        {
+            "timestamp": "2026-02-17T22:48:58.014729",
+            "user": "hi",
+            "agent": "Hello. Is there something I can help you with or would you like to know what I can do for you?"
+        },
+        {
+            "timestamp": "2026-02-17T22:53:28.367456",
+            "user": "Hi",
+            "agent": "Hello! How can I assist you today?"
+        },
+        {
+            "timestamp": "2026-02-17T22:54:43.852859",
+            "user": "Tell about current indian president.",
+            "agent": "It seems like the web search returned a lot of information. Let me try to provide a more concise answer.\n\nThe current President of India is Droupadi Murmu. She was elected as the 15th President of India on July 25, 2022, and is the first woman from the tribal community to hold the office."
+        },
+        {
+            "timestamp": "2026-02-17T22:57:12.891531",
+            "user": "Thanks. Can i see the token usage now?",
+            "agent": "You have used 1 token so far. You can continue to use the functions to get more information and assistance. When you are done, you can see the final token usage."
+        },
+        {
+            "timestamp": "2026-02-17T22:57:49.823588",
+            "user": "tell me the tokens left",
+            "agent": "You have 499 tokens left."
+        },
+        {
+            "timestamp": "2026-02-17T23:00:34.418845",
+            "user": "hi",
+            "agent": "Hello! It's nice to meet you. Is there anything I can help you with today?"
+        },
+        {
+            "timestamp": "2026-02-17T23:01:03.191371",
+            "user": "how are you?",
+            "agent": "I'm doing well, thank you for asking. I'm here to assist you with any questions or tasks you may have. How can I help you today?"
+        },
+        {
+            "timestamp": "2026-02-17T23:02:45.383537",
+            "user": "tell me about current indian president",
+            "agent": "It seems like the web search function returned a lot of information about the current president of India, Droupadi Murmu. If you would like to know more about her or her presidency, I can try to help you with that."
+        },
+        {
+            "timestamp": "2026-02-17T23:04:26.676562",
+            "user": "sure... tell me",
+            "agent": "It seems like the web search function returned more information about Droupadi Murmu's presidency. If you would like to know more about her or her presidency, I can try to help you with that."
+        },
+        {
+            "timestamp": "2026-02-18T12:00:47.310269",
+            "user": "hi",
+            "agent": "Hello! It's nice to meet you. I'm Viora, your personal assistant. How can I help you today? Do you need assistance with something specific or just want to chat?"
+        },
+        {
+            "timestamp": "2026-02-18T12:26:46.480383",
+            "user": "Hi",
+            "agent": "Hello! I'm Viora, your personal assistant. How can I help you today?"
+        },
+        {
+            "timestamp": "2026-02-18T12:27:49.848457",
+            "user": "who is current indian president?",
+            "agent": "<web_search>{\"query\": \"current indian president\"}</function>"
+        },
+        {
+            "timestamp": "2026-02-20T09:30:31.157756",
+            "user": "hi",
+            "agent": "Hello! I'm Viora, your personal assistant. How can I help you today?"
+        },
+        {
+            "timestamp": "2026-02-20T09:30:42.737562",
+            "user": "open notepad",
+            "agent": "Notepad should now be open."
+        },
+        {
+            "timestamp": "2026-02-20T09:32:49.791330",
+            "user": "open edge",
+            "agent": "Microsoft Edge should now be open."
+        },
+        {
+            "timestamp": "2026-02-20T09:33:07.439657",
+            "user": "open edge",
+            "agent": "Microsoft Edge should now be open."
+        },
+        {
+            "timestamp": "2026-02-20T09:33:40.568808",
+            "user": "open calculator",
+            "agent": "Calculator should now be open."
+        },
+        {
+            "timestamp": "2026-02-20T09:33:46.755941",
+            "user": "c",
+            "agent": "Calculator is already open."
+        },
+        {
+            "timestamp": "2026-02-20T09:48:05.894640",
+            "user": "hi",
+            "agent": "Hello! I'm Viora, your personal assistant. How can I help you today?"
+        },
+        {
+            "timestamp": "2026-02-20T09:48:15.563503",
+            "user": "open notepad",
+            "agent": "Notepad should now be open."
+        },
+        {
+            "timestamp": "2026-02-20T09:54:18.590749",
+            "user": "hi",
+            "agent": "Hello! I'm Viora, your personal assistant. How can I help you today?"
+        },
+        {
+            "timestamp": "2026-02-20T09:54:30.407874",
+            "user": "open notepad",
+            "agent": "Is there anything else I can help you with?"
+        },
+        {
+            "timestamp": "2026-02-20T09:54:42.583269",
+            "user": "open edge",
+            "agent": "Is there anything else I can help you with?"
+        },
+        {
+            "timestamp": "2026-02-20T09:55:08.093616",
+            "user": "who is current indian president?",
+            "agent": "The current president of India is Droupadi Murmu."
+        },
+        {
+            "timestamp": "2026-02-20T10:03:41.034140",
+            "user": "tell me more about her",
+            "agent": "Droupadi Murmu's achievements include being the first tribal woman to hold the highest constitutional office in India, making history in the 2022 presidential election, and symbolizing progress in tribal and women's representation. Her prior work in Odisha politics contributed to governance and development, and she has been a leader from a humble background, rising from grassroots politics, social work, and governance."
+        },
+        {
+            "timestamp": "2026-02-20T10:07:10.644953",
+            "user": "take screenshot of my screen",
+            "agent": "The screenshot has been saved to the default screenshots folder as \"screenshot.png\"."
+        },
+        {
+            "timestamp": "2026-02-20T10:07:32.946786",
+            "user": "Thanks",
+            "agent": "You're welcome! It was my pleasure to assist you. If you need anything else, feel free to ask!"
+        },
+        {
+            "timestamp": "2026-02-20T10:07:54.732400",
+            "user": "bye... exit",
+            "agent": "<function=exit_system> {\"message\": \"Exiting system...\"}</function> \n\nGoodbye! It was nice assisting you."
+        },
+        {
+            "timestamp": "2026-02-21T16:38:57.561848",
+            "user": "Hi",
+            "agent": "Hello! I'm Viora, your personal assistant. How can I help you today?"
         }
     ]
 }

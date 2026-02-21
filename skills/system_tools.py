@@ -30,7 +30,9 @@ class SystemTools:
         "photos": "explorer.exe shell:AppsFolder\\Microsoft.Windows.Photos_8wekyb3d8bbwe!App",
         "spotify": "spotify",
         "code": "code",
-        "vscode": "code"
+        "vscode": "code",
+        "no": "notepad",
+        "note": "notepad"
     }
 
     @staticmethod
