@@ -1,0 +1,12 @@
+{
+  "router_provider": "ollama",
+  "router_model": "gemma3:1b",
+  "reasoning_provider": "groq",
+  "reasoning_model": "llama-3.3-70b-versatile",
+  "extractor_provider": "ollama",
+  "extractor_model": "gemma3:1b",
+  "temperature": 0.0,
+  "chroma_db_path": "data/chroma_db",
+  "browser_profile_path": "data/browser_profile_selenium",
+  "max_steps": 15
+}
